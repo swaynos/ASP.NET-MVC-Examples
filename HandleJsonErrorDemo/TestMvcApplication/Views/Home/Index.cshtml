@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<input class="getJson" type="button" value="Get Data" data-url="@Url.Action("GiveMeJson", "Home", new { isError = false })"/>
+<input class="getJson" type="button" value="Get Error" data-url="@Url.Action("GiveMeJson", "Home", new { isError = true })"/>
+<div id="data">
+
+</div>
+<script src="@Url.Content("~/Scripts/Views/Home/Index.js")"></script>
