@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+<ArrayOfWonder xmlns:Wonders="http://en.wikipedia.org/wiki/Wonders_of_the_World">
+  <Wonder>
+    <Id type="Int">1</Id>
+    <Name>Channel Tunnel</Name>
+    <DateStarted>1987-12-01T00:00:00</DateStarted>
+    <DateFinished>1994-05-06T00:00:00</DateFinished>
+    <Location>Strait of Dover, between the United Kingdom and France</Location>
+  </Wonder>
+  <Wonder>
+    <Id>2</Id>
+    <Name>CN Tower</Name>
+    <DateStarted>1973-02-03T00:00:00</DateStarted>
+    <DateFinished>1976-06-26T00:00:00</DateFinished>
+    <Location>Toronto, Ontario, Canada</Location>
+  </Wonder>
+  <Wonder>
+    <Id>3</Id>
+    <Name>Empire State Building</Name>
+    <DateStarted>1930-01-22T00:00:00</DateStarted>
+    <DateFinished>1931-05-01T00:00:00</DateFinished>
+    <Location>New York, NY, U.S.</Location>
+  </Wonder>
+  <Wonder>
+    <Id>4</Id>
+    <Name>Golden Gate Bridge</Name>
+    <DateStarted>1933-01-05T00:00:00</DateStarted>
+    <DateFinished>1937-05-27T00:00:00</DateFinished>
+    <Location>Golden Gate Strait, north of San Francisco, California, U.S.</Location>
+  </Wonder>
+  <Wonder>
+    <Id>5</Id>
+    <Name>Itaipu Dam</Name>
+    <DateStarted>1970-01-01T00:00:00</DateStarted>
+    <DateFinished>1984-05-01T00:00:00</DateFinished>
+    <Location>Paraná River, between Brazil and Paraguay</Location>
+  </Wonder>
+  <Wonder>
+    <Id>6</Id>
+    <Name>Delta Works/ Zuiderzee Works</Name>
+    <DateStarted>1920-01-01T00:00:00</DateStarted>
+    <DateFinished>1997-05-10T00:00:00</DateFinished>
+    <Location>Netherlands</Location>
+  </Wonder>
+  <Wonder>
+    <Id>7</Id>
+    <Name>Panama Canal</Name>
+    <DateStarted>1880-01-01T00:00:00</DateStarted>
+    <DateFinished>1914-01-07T00:00:00</DateFinished>
+    <Location>Netherlands</Location>
+  </Wonder>
+</ArrayOfWonder>

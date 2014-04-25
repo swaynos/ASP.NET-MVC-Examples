@@ -1,0 +1,9 @@
+﻿@model TestMvcApplication.Models.FooModel
+@{
+    ViewBag.Title = "Success";
+}
+
+<h2>Success</h2>
+<p>
+    @Model.Wonder.Name was visited from @Html.DisplayFor(model => model.TravelStartDate) to @Html.DisplayFor(model => model.TravelEndDate)
+</p>

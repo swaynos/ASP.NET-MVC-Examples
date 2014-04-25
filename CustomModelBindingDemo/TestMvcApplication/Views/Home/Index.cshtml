@@ -1,0 +1,31 @@
+﻿@model TestMvcApplication.Models.FooModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.TripName)
+        @Html.TextBoxFor(model => model.TripName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.TravelStartDate)
+        @Html.TextBoxFor(model => model.TravelStartDate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.TravelEndDate)
+        @Html.TextBoxFor(model => model.TravelEndDate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Wonder)
+        @Html.DropDownListFor(model => model.Wonder, ViewBag.Wonders as SelectList, new { Name = "Wonder.Id" })
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+    <div>
+        @Html.ValidationSummary()
+    </div>
+}
