@@ -35,7 +35,6 @@ namespace TestMvcApplication.ModelBinders
             bool areDatesNull = controllerContext.HttpContext.Request.Form["TravelStartDate"] == null || controllerContext.HttpContext.Request.Form["TravelEndDate"] == null;
             if (!areDatesNull && model.TravelStartDate > model.TravelEndDate)
             {
-                // Again, please don't hard code
                 bindingContext.ModelState.AddModelError("TravelStartDate", "The Starting Date of Travel cannot fall before the Ending Date of Travel.");
             }
             // Rule: If the travel dates fall outside of when the Wonder was completed, this model is invalid
