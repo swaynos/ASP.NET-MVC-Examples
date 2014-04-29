@@ -1,0 +1,43 @@
+﻿@model TestMvcApplication.ViewModels.SearchViewModel
+@{
+    ViewBag.Title = "Search";
+}
+@section styles {
+    <link href="@Url.Content("~/Content/Views/Customer/Search.css")" rel="stylesheet" />
+}
+@section scripts {
+    <script src="@Url.Content("~/Scripts/Views/Customer/Search.js")"></script>
+}
+<div class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+@using (Html.BeginForm("Search", "Customer", FormMethod.Get)) {
+    <div class="form-group">
+        @Html.LabelFor(model => model.Model.CompanyName)
+        @Html.DropDownListFor(model => model.Model.CompanyName, Model.Companies as SelectList, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Model.LastModifiedDateStart)
+        @Html.TextBoxFor(model => model.Model.LastModifiedDateStart, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Model.LastModifiedDateEnd)
+        @Html.TextBoxFor(model => model.Model.LastModifiedDateEnd, new { @class = "form-control" })
+    </div>
+    <input type="submit" class="btn btn-lg btn-primary" value="Search" />
+}
+<table class="table table-bordered table-striped dataTable" id="SearchResults" data-AjaxSource="@Url.Action("AjaxHandler", "Customer")">
+    <thead>
+        <tr>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().CustomerId)</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().Title)</th>
+            <th class="header"><label>Name</label></th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().CompanyName)</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().SalesPerson)</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().Phone)</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().EmailAddress)</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().ModifiedDate)</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

@@ -1,0 +1,7 @@
+﻿#SearchResults_wrapper {
+    padding-top: 15px;
+    overflow-x: scroll;
+}
+.dataTable th label {
+    cursor: pointer;
+}
