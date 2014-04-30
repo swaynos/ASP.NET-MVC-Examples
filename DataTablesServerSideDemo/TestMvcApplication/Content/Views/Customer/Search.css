@@ -1,7 +1,17 @@
-﻿#SearchResults_wrapper {
-    padding-top: 15px;
-    overflow-x: scroll;
+﻿#SearchForm
+{
+    padding-bottom: 10px;
 }
-.dataTable th label {
+.dataTable th, .dataTable th label {
     cursor: pointer;
+}
+#SearchResults_wrapper .ui-toolbar {
+    padding: 10px 5px;
+}
+.glyphicon-envelope{
+    font-size: 30px; 
+}
+.center
+{
+    text-align: center;
 }

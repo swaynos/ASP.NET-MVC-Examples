@@ -16,10 +16,12 @@ namespace TestMvcApplication.Controllers
         [HttpGet]
         public ActionResult Search(SearchModel model)
         {
+            List<string> companies = db.GetCompanies();
+            companies.Insert(0, "");
             SearchViewModel viewModel = new SearchViewModel()
             {
                 Model = model,
-                Companies = new SelectList(db.GetCompanies()),
+                Companies = new SelectList(companies),
                 Results = new List<Customer>() // This will be populated via Ajax
             };
             return View("Search", viewModel);
@@ -27,15 +29,15 @@ namespace TestMvcApplication.Controllers
         [HttpGet]
         public JsonResult AjaxHandler(jQueryDataTableParamModel param)
         {
-            int totalLogsCount;
+            int totalCustomersCount, totalFilteredCustomersCount;
 
-            List<Customer> results = db.SearchCustomers(out totalLogsCount, param);
+            List<Customer> results = db.SearchCustomers(out totalCustomersCount, out totalFilteredCustomersCount, param);
 
             // jQuery DataTables expected values  http://datatables.net/usage/server-side     
             return Json(new
             {
-                iTotalRecords = totalLogsCount,
-                iTotalDisplayRecords = results.Count,
+                iTotalRecords = totalCustomersCount,
+                iTotalDisplayRecords = totalFilteredCustomersCount,
                 sEcho = param.sEcho,
                 aaData = results.Select(t => t.GetDataTableRow()).ToArray()
             }, JsonRequestBehavior.AllowGet);

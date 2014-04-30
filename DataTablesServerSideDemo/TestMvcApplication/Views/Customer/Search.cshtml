@@ -11,7 +11,8 @@
 <div class="page-header">
     <h2>@ViewBag.Title</h2>
 </div>
-@using (Html.BeginForm("Search", "Customer", FormMethod.Get)) {
+@using (Html.BeginForm("Search", "Customer", FormMethod.Get, new { @id = "SearchForm" }))
+{
     <div class="form-group">
         @Html.LabelFor(model => model.Model.CompanyName)
         @Html.DropDownListFor(model => model.Model.CompanyName, Model.Companies as SelectList, new { @class = "form-control" })
@@ -26,17 +27,17 @@
     </div>
     <input type="submit" class="btn btn-lg btn-primary" value="Search" />
 }
-<table class="table table-bordered table-striped dataTable" id="SearchResults" data-AjaxSource="@Url.Action("AjaxHandler", "Customer")">
+<table class="table table-bordered table-striped dataTable hidden-phone" id="SearchResults" data-AjaxSource="@Url.Action("AjaxHandler", "Customer")">
     <thead>
         <tr>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().CustomerId)</th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().Title)</th>
-            <th class="header"><label>Name</label></th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().CompanyName)</th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().SalesPerson)</th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().Phone)</th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().EmailAddress)</th>
-            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().ModifiedDate)</th>
+            <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().CustomerId, new { @class = "pull-left" })</th>
+            <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().Title, new { @class = "pull-left" })</th>
+            <th class="header"><label class="pull-left">Name</label></th>
+            <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().CompanyName, new { @class = "pull-left" })</th>
+            <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().SalesPerson, new { @class = "pull-left" })</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().Phone, new { @class = "pull-left" })</th>
+            <th class="header">@Html.LabelFor(row => row.Results.FirstOrDefault().EmailAddress, new { @class = "pull-left" })</th>
+            <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().ModifiedDate, new { @class = "pull-left" })</th>
         </tr>
     </thead>
     <tbody></tbody>
