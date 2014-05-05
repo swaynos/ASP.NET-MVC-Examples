@@ -12,7 +12,7 @@ Customer.Search.GetDataTableParameters = function () {
     return {
         // parameters that are useful before data is sent
         "bServerSide": true,
-        "sAjaxSource": $('#SearchResults').data('AjaxSource'),
+        "sAjaxSource": $('#SearchResults').data('ajaxsource'),
         "fnServerData": function (sSource, aoData, fnCallback, oSettings) {
             oSettings.jqXHR = $.ajax({
                 "dataType": 'json',

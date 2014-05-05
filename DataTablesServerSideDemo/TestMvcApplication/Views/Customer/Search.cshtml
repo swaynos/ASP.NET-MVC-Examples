@@ -27,7 +27,7 @@
     </div>
     <input type="submit" class="btn btn-lg btn-primary" value="Search" />
 }
-<table class="table table-bordered table-striped dataTable hidden-phone" id="SearchResults" data-AjaxSource="@Url.Action("AjaxHandler", "Customer")">
+<table class="table table-bordered table-striped dataTable hidden-phone" id="searchresults" data-AjaxSource="@Url.Action("AjaxHandler", "Customer")">
     <thead>
         <tr>
             <th class="header hidden-xs">@Html.LabelFor(row => row.Results.FirstOrDefault().CustomerId, new { @class = "pull-left" })</th>
